@@ -5,42 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class Management Dashboard</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
+    body { font-family: Arial, sans-serif; margin: 0; display: flex; }
+    .sidebar { width: 250px; background: #f4f4f4; padding: 20px; border-right: 1px solid #ccc; }
+    .main { flex-grow: 1; padding: 20px; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
     #searchBox { padding: 10px; width: 300px; margin-bottom: 20px; }
     button { padding: 10px 20px; margin-left: 10px; }
-    #notification { margin-top: 20px; padding: 10px; background: #e0ffe0; border: 1px solid #b2ffb2; display: none; }
+    #notification { margin-top: 20px; padding: 10px; background: #e0ffe0; border: 1px solid #b2ffb2; }
   </style>
 </head>
 <body>
-  <input type="text" id="searchBox" placeholder="Search for a course..." onkeyup="searchCourse()" />
-  <button onclick="addNewRow()">Add New Row</button>
-  <button onclick="exportToExcel()">Export to Excel</button>
-  <button onclick="exportToPDF()">Export to PDF</button>
+  <div class="sidebar">
+    <h3>Class Alerts</h3>
+    <div id="notification"></div>
+  </div>
+  <div class="main">
+    <input type="text" id="searchBox" placeholder="Search for a course..." onkeyup="searchCourse()" />
+    <button onclick="addNewRow()">Add New Row</button>
+    <button onclick="exportToExcel()">Export to Excel</button>
+    <button onclick="exportToPDF()">Export to PDF</button>
 
-  <div id="notification"></div>
-
-  <table id="courseTable">
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th>Instructor</th>
-        <th>Days</th>
-        <th>Time</th>
-        <th>Fee</th>
-        <th>Room No.</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td contenteditable="true">Bharatanatyam</td><td contenteditable="true">Meenakshi Rao</td><td contenteditable="true">Sat. & Sun.</td><td contenteditable="true">8.30 to 11.30am</td><td contenteditable="true">₹2800</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
-      <tr><td contenteditable="true">Bharatanatyam</td><td contenteditable="true">Arupa Lahiry</td><td contenteditable="true">Sat. & Sun.</td><td contenteditable="true">4.30 to 5.30pm & 10.30 to 11.30am</td><td contenteditable="true">₹2500</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
-      <tr><td contenteditable="true">Kathak (Advance)</td><td contenteditable="true">Deepti Gupta</td><td contenteditable="true">Tue. & Wed. Sat.</td><td contenteditable="true">5 to 6pm</td><td contenteditable="true">₹2800</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
-      <tr><td contenteditable="true">Kathak (Beginners)</td><td contenteditable="true">Anjali Chauhan</td><td contenteditable="true">Tue. & Sat.</td><td contenteditable="true">4 to 5pm & 12 to 1pm</td><td contenteditable="true">₹2000</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
-      <tr><td contenteditable="true">Odissi</td><td contenteditable="true">Subrata Panda</td><td contenteditable="true">Thur.</td><td contenteditable="true">3.30 to 5.30pm</td><td contenteditable="true">₹2000</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
-    </tbody>
-  </table>
+    <table id="courseTable">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Instructor</th>
+          <th>Days</th>
+          <th>Time</th>
+          <th>Fee</th>
+          <th>Room No.</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td contenteditable="true">Bharatanatyam</td><td contenteditable="true">Meenakshi Rao</td><td contenteditable="true">Sat. & Sun.</td><td contenteditable="true">8.30 to 11.30am</td><td contenteditable="true">₹2800</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+        <tr><td contenteditable="true">Bharatanatyam</td><td contenteditable="true">Arupa Lahiry</td><td contenteditable="true">Sat. & Sun.</td><td contenteditable="true">4.30 to 5.30pm & 10.30 to 11.30am</td><td contenteditable="true">₹2500</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+        <tr><td contenteditable="true">Kathak (Advance)</td><td contenteditable="true">Deepti Gupta</td><td contenteditable="true">Tue. & Wed. Sat.</td><td contenteditable="true">5 to 6pm</td><td contenteditable="true">₹2800</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+        <tr><td contenteditable="true">Kathak (Beginners)</td><td contenteditable="true">Anjali Chauhan</td><td contenteditable="true">Tue. & Sat.</td><td contenteditable="true">4 to 5pm & 12 to 1pm</td><td contenteditable="true">₹2000</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+        <tr><td contenteditable="true">Odissi</td><td contenteditable="true">Subrata Panda</td><td contenteditable="true">Thur.</td><td contenteditable="true">3.30 to 5.30pm</td><td contenteditable="true">₹2000</td><td contenteditable="true"></td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -121,10 +127,9 @@
       });
 
       if (activeClasses.length > 0) {
-        notification.style.display = 'block';
         notification.innerText = 'Ongoing Classes: ' + [...new Set(activeClasses)].join(', ');
       } else {
-        notification.style.display = 'none';
+        notification.innerText = 'No class is currently ongoing.';
       }
     }
 
