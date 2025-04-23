@@ -105,7 +105,7 @@
       rows.forEach(row => {
         const timeText = row.cells[3]?.innerText;
         if (timeText) {
-          const ranges = timeText.split(',');
+          const ranges = timeText.split(/&|,/);
           ranges.forEach(range => {
             const [start, end] = range.trim().split(' to ');
             const startTime = parseTime(start);
@@ -122,17 +122,17 @@
 
       if (activeClasses.length > 0) {
         notification.style.display = 'block';
-        notification.innerText = 'Ongoing Classes: ' + activeClasses.join(', ');
+        notification.innerText = 'Ongoing Classes: ' + [...new Set(activeClasses)].join(', ');
       } else {
         notification.style.display = 'none';
       }
     }
 
     function parseTime(str) {
-      const match = str.trim().match(/(\d+):(\d+)?\s*(am|pm)/i);
+      const match = str.trim().match(/(\d+)(?:\.(\d+))?\s*(am|pm)/i);
       if (!match) return null;
       let hour = parseInt(match[1]);
-      let minute = parseInt(match[2] || '0');
+      let minute = parseInt(match[2] || '0') * (match[2]?.length === 1 ? 10 : 1);
       const ampm = match[3].toLowerCase();
       if (ampm === 'pm' && hour !== 12) hour += 12;
       if (ampm === 'am' && hour === 12) hour = 0;
