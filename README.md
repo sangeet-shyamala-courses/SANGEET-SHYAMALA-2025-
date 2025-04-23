@@ -51,6 +51,7 @@
         <tr><td contenteditable="true">Kathak (Advance)</td><td contenteditable="true">Deepti Gupta</td><td contenteditable="true">Tue. & Wed. Sat.</td><td contenteditable="true">5 to 6pm</td><td contenteditable="true">₹2800</td><td contenteditable="true">101</td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
         <tr><td contenteditable="true">Kathak (Beginners)</td><td contenteditable="true">Anjali Chauhan</td><td contenteditable="true">Tue. & Sat.</td><td contenteditable="true">4 to 5pm & 12 to 1pm</td><td contenteditable="true">₹2000</td><td contenteditable="true">103</td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
         <tr><td contenteditable="true">Odissi</td><td contenteditable="true">Subrata Panda</td><td contenteditable="true">Thur.</td><td contenteditable="true">3.30 to 5.30pm</td><td contenteditable="true">₹2000</td><td contenteditable="true">102</td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
+        <tr><td contenteditable="true">Kathak (Beginner)</td><td contenteditable="true">Priyanka Shukla</td><td contenteditable="true">Sat. & Sun.</td><td contenteditable="true">11am to 12pm</td><td contenteditable="true">₹2000</td><td contenteditable="true">103</td><td><button onclick="alert('Changes saved!')">Save</button></td></tr>
       </tbody>
     </table>
   </div>
